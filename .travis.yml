@@ -10,18 +10,18 @@ addons:
     update: true
 
 before_install:
- - sudo pip install --upgrade pip>=18.0
- - curl -LO https://github.com/zeromq/libzmq/releases/download/v4.2.3/zeromq-4.2.3.tar.gz
- - tar xfz zeromq-4.2.3.tar.gz
- - cd zeromq-4.2.3
+ - sudo pip install --upgrade pip>=19.0
+ - curl -LO https://github.com/zeromq/libzmq/releases/download/v4.3.1/zeromq-4.3.1.tar.gz
+ - tar xfz zeromq-4.3.1.tar.gz
+ - cd zeromq-4.3.1
  - ./autogen.sh
  - ./configure CPPFLAGS=-DPIC CFLAGS=-fPIC CXXFLAGS=-fPIC LDFLAGS=-fPIC --disable-shared --enable-static
  - make
  - sudo make install
    # Install Cap'n Proto
- - curl -O https://capnproto.org/capnproto-c++-0.6.1.tar.gz
- - tar xvf capnproto-c++-0.6.1.tar.gz
- - cd capnproto-c++-0.6.1
+ - curl -O https://capnproto.org/capnproto-c++-0.7.0.tar.gz
+ - tar xvf capnproto-c++-0.7.0.tar.gz
+ - cd capnproto-c++-0.7.0
  - ./configure --prefix=/usr/local CPPFLAGS=-DPIC CFLAGS=-fPIC CXXFLAGS=-fPIC LDFLAGS=-fPIC --disable-shared --enable-static
  - make
  - sudo make install
