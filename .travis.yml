@@ -18,6 +18,7 @@ before_install:
  - ./configure CPPFLAGS=-DPIC CFLAGS=-fPIC CXXFLAGS=-fPIC LDFLAGS=-fPIC --disable-shared --enable-static
  - make
  - sudo make install
+ - cd ..
    # Install Cap'n Proto
  - curl -O https://capnproto.org/capnproto-c++-0.7.0.tar.gz
  - tar xvf capnproto-c++-0.7.0.tar.gz
@@ -33,6 +34,7 @@ before_install:
  - CFLAGS="-fPIC" ./configure --prefix=/usr/local
  - make
  - sudo make install
+ - cd ..
    # Clone openpilot
  - git clone https://github.com/commaai/openpilot.git
 
